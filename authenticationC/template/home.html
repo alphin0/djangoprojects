@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+ {% block nav %} Home {% endblock %}
+{% block content %}
+<h1>{{user.username}}</h1>
+      <a class="navbar-brand" href="{% url 'logout' %}">logout</a>
+{% endblock %}

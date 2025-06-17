@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Home page.</h1>
+        {{csrf_token}}
+    <center><img src="{% static 'images/auratium.jpeg' %}" height="300px" width="400px"></center>
+    <h2>Name is {{name}}</h2>
+    <h2>Age is {{Age}}</h2>
+</body>
+</html>

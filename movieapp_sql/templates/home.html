@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title_html %}Home{% endblock %}
+{% block navtitle %}Online Movie Store {% endblock %}
+{% block button %} <a href="{% url 'addmovie' %}" class="btn custom-outline me-3" style="color: #AAB6A2;">Add movie</a>{% endblock %}
+{% block content %}
+<h1 class="mt-5"></h1>
+<!--  <h1 class="mt-5" style="color:#AAB6A2;text-align:center;text-decoration:fixed-top;">Movie List</h1>-->
+<div class="row justify-content-center g-4 px-3 mx-auto mb-5 mt-3">
+{% for m in Movie %}
+  <div class="col-6 md-3 d-flex">
+    <div class="card custom-card w-100 d-flex flex-column " style="background-color: #374D3C; color: #ffffff;">
+
+      <img src="{{m.image.url}}"  class="card-img-top" alt="..." height="400px" width="150px">
+
+      <div class="card-body d-flex flex-column ">
+        <h5 class="card-title text-danger text-center">{{m.movie_name}}</h5>
+        <h5 class="card-title">Language:{{m.language}}</h5>
+        <h5 class="card-title">Director:{{m.director_name}}</h5>
+        <h5 class="card-title mb-3">Year:{{m.year}}</h5>
+
+          <div class="mt-auto text-center">
+              <a href="{% url 'details' m.id %}" class="btn btn-danger">Details</a>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}

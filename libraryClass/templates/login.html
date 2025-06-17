@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to Login.</h1>
+<form method="post" class="w-50">
+  {% csrf_token %}
+    {{ form|crispy }}
+    <div class="mb-3 mt-3 btn-wrapper ">
+    <input type="submit" class="btn custom-btn">
+    </div>
+</form>
+<a href="{% url 'books:home' %}">home</a>
+<a href="{% url 'books:addbook' %}">Addbook</a>
+<a href="{% url 'books:viewbook' %}">Viewbook</a>
+<a href="{% url 'users:register' %}">register</a>
+<a href="{% url 'users:login' %}">login</a>
+<a href="{% url 'users:logout' %}">logout</a>
+</body>
+</html>

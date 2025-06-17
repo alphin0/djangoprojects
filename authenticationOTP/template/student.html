@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+ {% block nav %} Signup {% endblock %}
+{% block content %}
+<h1>Welcome to Student page</h1>
+<h1>{{user.username}}</h1>
+<a class="navbar-brand" href="{% url 'home' %}">Home</a>
+{% endblock %}

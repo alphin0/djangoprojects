@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container w-50 bg-white border border-2 border-danger mt-5 px-5 pb-5 pt-5 mb-5">
+
+    <center><form method="POST" enctype="multipart/form-data">
+        <h2 class="text-center text-danger">Edit</h2>
+        {% csrf_token %}
+        {{form}}
+        <div class="mb-3">
+        <input type="submit" class="btn btn-danger">
+        </div>
+    </form></center>
+
+</div>
+</body>
+</html>

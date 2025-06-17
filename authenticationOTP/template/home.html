@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+ {% block nav %} Signup {% endblock %}
+{% block content %}
+<h1>Welcome to Home page</h1>
+    {% if user.is_authenticated %}
+    <h1>{{user.username}}</h1>
+        <a class="navbar-brand" href="{% url 'signout' %}">logout</a>
+        <a class="navbar-brand" href="{% url 'password_change' %}">Change Password</a>
+    {% else %}
+    <h1>Guest</h1>
+        <a class="navbar-brand" href="{% url 'signin' %}">login</a>
+        <a class="navbar-brand" href="{% url 'signup' %}">Signup</a>
+
+    {% endif %}
+{% endblock %}

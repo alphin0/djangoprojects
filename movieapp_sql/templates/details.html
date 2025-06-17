@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title_html %}Details{% endblock %}
+{% block navtitle %}Details {% endblock %}
+{% block button %} <a href="{% url 'home' %}" class="btn custom-outline" style="color: #AAB6A2;">Home</a>{% endblock %}
+{% block content %}
+<h1 class="mt-5"></h1>
+  <div class="card " style="max-width: 800px; min-height: 360px; background-color: #374D3C;">
+    <div class="row">
+        <div class="col-md-4">
+          <img src="{{movies.image.url}}" class="img-fluid rounded-start w-100 h-100 object-fit-cover" alt="..." >
+        </div>
+        <div class="col-md-6 p-4 mt-3" style="background-color: #374D3C; color: #ffffff;">
+          <h5 class="fs-2 fw-bold text-danger ">{{movies.movie_name}}</h5>
+          <p class="fw-medium" style="text-align: left">{{movies.description}}</p>
+          <h5 class="fw-bold">Language: {{movies.language}}</h5>
+          <h5 class="fw-bold">Director: {{movies.director_name}}</h5>
+          <h5 class="fw-bold">Year: {{movies.year}}</h5>
+            <a href="{% url 'edit' movies.id %}" class="btn btn-danger mt-5">Edit</a>
+            <a class="btn btn-danger mt-5" href="{% url 'delete' movies.id %}">Delete</a></td>
+        </div>
+
+    </div>
+  </div>
+
+{% endblock %}

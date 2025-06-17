@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_html %}Home{% endblock %}
+ {% block nav %} Signup {% endblock %}
+{% block content %}
+<form method="post" class="w-50">
+  {% csrf_token %}
+    {{ form|crispy }}
+    <div class="mb-3 mt-3 btn-wrapper ">
+    <input type="submit" class="btn custom-btn">
+    </div>
+</form>
+{% endblock %}
